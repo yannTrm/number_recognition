@@ -21,19 +21,24 @@ Le projet vise à mettre en œuvre un système de reconnaissance de chiffres éc
 ```bash
 git clone https://github.com/yannTrm/number_recognition
 cd votre_projet
-Installer les dépendances requises :
-bash
-Copy code
-pip install -r requirements.txt
-Télécharger le modèle pré-entraîné model.h5 et placez-le dans le répertoire model/.
-Utilisation
-Expliquer comment utiliser le projet et ses principales fonctionnalités.
+```
 
-main.py
+Installer les dépendances requises :
+
+```bash
+pip install -r requirements.txt
+```
+
+Télécharger le modèle pré-entraîné model.h5 et placez-le dans le répertoire model/.
+
+Utilisation
+
+
+`main.py`
+
 Ce script est le point d'entrée du projet et sert d'exemple pour utiliser les fonctions fournies par les autres modules.
 
-python
-Copy code
+```python
 # Importer les modules nécessaires
 import process_image as seg
 import leNet4 as LeNet4
@@ -50,7 +55,9 @@ predictions = seg.process_image(model, FILE_DATA)
 
 # Afficher les prédictions
 print(predictions)
-process_image.py
+```
+
+`process_image.py`
 Ce module contient des fonctions pour traiter les images et faire des prédictions en utilisant le modèle pré-entraîné.
 
 load_image(chemin_image)
