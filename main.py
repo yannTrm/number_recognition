@@ -28,7 +28,7 @@ def process_image(model, path_data=FILE_DATA, boost=False):
     ROI = cv2.bitwise_not(create_roi(image, x=60, y=20, width=90, height=650))
     
     try:
-        image_segmented = segment(image, ROI)
+        image_segmented = segment(ROI)
         if image_segmented is None:
             return 0
         
@@ -42,7 +42,7 @@ def handle_value_error(e):
     return -1
        
 
-def segment(image, roi):
+def segment(roi):
     segmentation = list(segment_image(roi))
     if segmentation:
         numbers = np.stack(segmentation, axis=0).astype("float32") / 255.0
