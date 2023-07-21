@@ -43,7 +43,7 @@ def handle_value_error(e):
        
 
 def segment(image, roi):
-    segmentation = segment_image(roi)
+    segmentation = list(segment_image(roi))
     if segmentation:
         numbers = np.stack(segmentation, axis=0).astype("float32") / 255.0
         return numbers
