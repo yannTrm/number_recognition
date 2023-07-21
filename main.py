@@ -20,7 +20,7 @@ FILE_RESULT = "your_result_file.csv"
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 
-def process_image(model, path_data=FILE_DATA, result_file=None, boost=False):
+def process_image(model, path_data=FILE_DATA, boost=False):
     image = load_image(path_data)
     if image is None:
         return 0
@@ -42,7 +42,7 @@ def handle_value_error(e):
     return -1
        
 
-def segment(image, roi, list_length):
+def segment(image, roi):
     segmentation = segment_image(roi)
     if segmentation:
         numbers = np.stack(segmentation, axis=0).astype("float32") / 255.0
